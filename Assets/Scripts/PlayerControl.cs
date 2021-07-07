@@ -1,17 +1,34 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Reflection;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.LowLevel;
 
 public class PlayerControl : MonoBehaviour
 {
+    [Header("General Setup Settings")]
     [SerializeField] private InputAction movement;
+    [SerializeField] private InputAction fire;
+    [Tooltip("How fast player ship moves in any direction")]
     [SerializeField] private float controlSpeed = 10f;
+    [Tooltip("How far player ship moves horizontally")]
     [SerializeField] private float xRange = 5f;
+    [Tooltip("How far player ship moves vertically")]
     [SerializeField] private float yRange = 5f;
+    
+    [Header("Laser Gun Array")]
+    [Tooltip("Add lasers here")]
+    [SerializeField] private GameObject[] lasers;
+    
+    [Header("Screen position based tuning")]
+    [Tooltip("Rotation speed factor of pitch axis on player ship ")]
     [SerializeField] private float posPitchFactor = -8f;
+    [Tooltip("Rotation speed factor of yaw axis on player ship ")]
     [SerializeField] private float posYawFactor = 4.5f;
+    
+    [Header("Player input based tuning")]
     [SerializeField] private float controlFactor = -25f;
 
     private float xThrow, yThrow;
@@ -22,6 +39,29 @@ public class PlayerControl : MonoBehaviour
     {
         ProcessTranslation();
         ProcessRotation();
+        ProcessFiring();
+    }
+
+    private void ProcessFiring()
+    {
+        if (fire.ReadValue<float>() > 0)
+        {
+            SetLasersActive(true);
+        }
+        else
+        {
+            SetLasersActive(false);
+        }
+        
+    }
+
+    private void SetLasersActive(bool isActive)
+    {
+        foreach (GameObject laser in lasers)
+        {
+            var emissionModule = laser.GetComponent<ParticleSystem>().emission;
+            emissionModule.enabled = isActive;
+        }
     }
 
     private void ProcessRotation()
@@ -54,10 +94,12 @@ public class PlayerControl : MonoBehaviour
     private void OnEnable()
     {
         movement.Enable(); 
+        fire.Enable();
     }
 
     private void OnDisable()
     {
         movement.Disable();
+        fire.Disable();
     }
 }
