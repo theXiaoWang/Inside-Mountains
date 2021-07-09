@@ -334,8 +334,17 @@ AnimationClip:
       - serializedVersion: 3
         time: 36
         value: {x: -120.014496, y: 72.258224, z: 572.1291}
-        inSlope: {x: 32.846424, y: -2.254593, z: 0}
-        outSlope: {x: 32.846424, y: -2.254593, z: 0}
+        inSlope: {x: 32.846424, y: -3.1954858, z: 0}
+        outSlope: {x: 32.846424, y: -3.1954858, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 36.733334
+        value: {x: -87.89185, y: 26.23765, z: 554.07733}
+        inSlope: {x: 52.18504, y: -34.37069, z: -44.082542}
+        outSlope: {x: 52.18504, y: -34.37069, z: -44.082542}
         tangentMode: 0
         weightedMode: 0
         inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
@@ -721,8 +730,17 @@ AnimationClip:
       - serializedVersion: 3
         time: 36
         value: 72.258224
-        inSlope: -2.254593
-        outSlope: -2.254593
+        inSlope: -3.1954858
+        outSlope: -3.1954858
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 36.733334
+        value: 26.23765
+        inSlope: -34.37069
+        outSlope: -34.37069
         tangentMode: 136
         weightedMode: 0
         inWeight: 0.33333334
@@ -1507,7 +1525,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bfda56da833e2384a9677cd3c976a436, type: 3}
-  m_Name: Timeline
+  m_Name: Master Timeline
   m_EditorClassIdentifier: 
   m_Version: 0
   m_Tracks:

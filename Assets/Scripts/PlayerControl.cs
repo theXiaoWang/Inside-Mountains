@@ -9,8 +9,8 @@ using UnityEngine.InputSystem.LowLevel;
 public class PlayerControl : MonoBehaviour
 {
     [Header("General Setup Settings")]
-    [SerializeField] private InputAction movement;
-    [SerializeField] private InputAction fire;
+    [SerializeField] InputAction movement;
+    [SerializeField] InputAction fire;
     [Tooltip("How fast player ship moves in any direction")]
     [SerializeField] private float controlSpeed = 10f;
     [Tooltip("How far player ship moves horizontally")]
@@ -44,15 +44,9 @@ public class PlayerControl : MonoBehaviour
 
     private void ProcessFiring()
     {
+        SetLasersActive(false);
         if (fire.ReadValue<float>() > 0)
-        {
             SetLasersActive(true);
-        }
-        else
-        {
-            SetLasersActive(false);
-        }
-        
     }
 
     private void SetLasersActive(bool isActive)
