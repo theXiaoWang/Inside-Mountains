@@ -1,5 +1,5 @@
 # Inside Mountains
-This is a little sky fighter shooting game I made back in 2020. Player gains score by shooting down enemy objects and have to watch out mountainous terrain to avoid crashing. Created in Unity. Terrain painted in Unity.
+This is a little sky fighter shooting game I made back in 2020. Player gains score by shooting down enemy objects and has to watch out mountainous terrain to avoid crashing. Created in Unity. Terrain painted in Unity.
 
 ![ProjectBoostScreenshot](https://user-images.githubusercontent.com/84678151/201988545-6dd975fe-def8-4dc0-8a54-12399d034588.png)
 ![ProjectBoostScreenshot](https://user-images.githubusercontent.com/84678151/201988562-8bcbdf40-ed73-4ed8-89b3-fbccb72bf740.png)
